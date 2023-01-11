@@ -1,0 +1,23 @@
+name: Test
+
+# only on push or allow us to do this manually using workflow dispatch
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+  pull_request_target:
+
+permissions:
+  id-token: write
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: show vars
+        run: |
+          set
